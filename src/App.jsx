@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Projects from './components/Projects';
+import Skills from './components/Skills';
 import Experience from './components/Experience';
 import Resume from './components/Resume';
 import Scene from './components/Scene';
@@ -188,6 +189,7 @@ export default function App() {
       >
         <Hero scrollToSection={scrollToSection} />
         <Projects />
+        <Skills />
         <Experience />
         <Resume />
       </main>

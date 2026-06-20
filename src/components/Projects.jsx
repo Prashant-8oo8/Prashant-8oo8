@@ -42,13 +42,13 @@ export default function Projects() {
 
   const projects = [
     {
-      title: 'Haze & Co.',
-      description: 'Building a seamless, high-conversion shopping experience for modern brands. Completely solo-developed end-to-end with secure Stripe payment integration, real-time Firebase inventory management, and an admin dashboard.',
+      title: 'Brand Name',
+      description: 'Premium protein & sports nutrition e-commerce platform. Features secure Stripe checkout, full inventory admin dashboard, and authenticated order tracking.',
       icon: <ShoppingBag className="w-6 h-6 text-[#00ced1]" />,
-      tech: ['React', 'Stripe', 'Firebase', 'Tailwind'],
+      tech: ['Next.js', 'Stripe', 'Firebase', 'ImageKit'],
       glowColor: 'rgba(0, 206, 209, 0.15)',
-      linkText: 'comming soon....',
-      url: '#'
+      linkText: 'View Project',
+      url: 'https://e-sample.vercel.app/'
     },
     {
       title: 'AI Resume Analyzer',

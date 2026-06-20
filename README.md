@@ -17,12 +17,12 @@
 
 ---
 
-## ⚡ About Me
+## About Me
 
 ```ts
 const prashant = {
   role:      "Full Stack Developer & CS Student",
-  location:  "Prayagraj, Uttar Pradesh 🇮🇳",
+  location:  "Prayagraj, Uttar Pradesh, IN",
   education: "B.Tech CSE @ United Institute of Technology (2023–Present)",
   community: "Technical Head @ Google Developer Groups (GDG) on Campus",
 
@@ -30,15 +30,15 @@ const prashant = {
   learning:          ["System Design", "Node.js APIs", "Advanced TypeScript"],
   openTo:            "Internships · Collaborations · Open Source",
 
-  funFact: "I shipped a full e-commerce platform with Stripe + Firebase solo 🚀",
+  funFact: "I shipped a full e-commerce platform with Stripe + Firebase solo.",
 };
 ```
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-### 🌐 Frontend
+### Frontend
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
@@ -48,20 +48,20 @@ const prashant = {
 ![Redux](https://img.shields.io/badge/Redux-764ABC?style=flat-square&logo=redux&logoColor=white)
 ![Zustand](https://img.shields.io/badge/Zustand-433e38?style=flat-square)
 
-### 🔧 Backend & Services
+### Backend & Services
 ![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black)
 ![Appwrite](https://img.shields.io/badge/Appwrite-FD366E?style=flat-square&logo=appwrite&logoColor=white)
 ![Stripe](https://img.shields.io/badge/Stripe-635BFF?style=flat-square&logo=stripe&logoColor=white)
 ![Cloudinary](https://img.shields.io/badge/Cloudinary-3448C5?style=flat-square&logo=cloudinary&logoColor=white)
 ![Resend](https://img.shields.io/badge/Resend-000000?style=flat-square&logo=resend&logoColor=white)
 
-### 🤖 AI & Cloud
+### AI & Cloud
 ![Groq](https://img.shields.io/badge/Groq_API-F55036?style=flat-square)
 ![Claude API](https://img.shields.io/badge/Claude_API-CC785C?style=flat-square)
 ![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonaws&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
 
-### 🧰 Tools
+### Tools
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat-square&logo=postman&logoColor=white)
@@ -70,62 +70,63 @@ const prashant = {
 
 ---
 
-## 🚀 Featured Projects
+##  Featured Projects
 
 <table>
 <tr>
 <td width="50%" valign="top">
 
-### 🪝Haze & Co. — Premium E-Commerce
+###  [Brand Name — Premium E-Commerce](https://e-sample.vercel.app)
 > Full-stack e-commerce platform built solo from scratch
 
-**Stack:** Next.js · TypeScript · Firebase · Stripe · Cloudinary · Resend
+**Stack:** Next.js · TypeScript · Firebase · Stripe · ImageKit · Resend
 
-- 🔐 Stripe checkout with UPI, Card & Netbanking
-- 🛡️ Server-side payment intent verification
-- 🗂️ Admin dashboard — inventory, orders, image uploads
-- 📧 Automated HTML order confirmation emails
-- 🛒 Persistent cart via Zustand
+- Stripe checkout with server-side price and payment verification
+- Admin dashboard — inventory (nutrition facts, variants), order management, ImageKit uploads
+- Automated HTML order confirmation emails
+- Persistent cart via Zustand
+- Authenticated order tracking (Firebase ID token verified server-side)
+- Strict Firestore security rules (ownership-based access control)
 
 </td>
 <td width="50%" valign="top">
 
-### 🤖 [Resume Analyzer](https://resume-analyzer-three-zeta.vercel.app/)
+### [Resume Analyzer](https://resume-analyzer-three-zeta.vercel.app/)
 > AI-powered resume feedback tool — fully client-side
 
 **Stack:** React · Groq API · Vercel
 
-- 🔒 Zero data stored or transmitted
-- ⚡ Real-time AI feedback via Groq LLM
-- 📋 Analyzes formatting, structure & content
-- 🆓 Completely free to use
+- Zero data stored or transmitted
+- Real-time AI feedback via Groq LLM
+- Analyzes formatting, structure & content
+- Completely free to use
 
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 
-### ✍️ [Blogging Application](https://crazy-coffee.vercel.app)
+### [Blogging Application](https://crazy-coffee.vercel.app)
 > Full-featured blog platform with auth & real-time sync
 
 **Stack:** React · Appwrite · Vercel
 
-- 📝 Full CRUD for blog posts
-- 🔑 Secure email/password authentication
-- ☁️ Appwrite BaaS for DB & file storage
-- ⚡ Real-time content sync
+- Full CRUD for blog posts
+- Secure email/password authentication
+- Appwrite BaaS for DB & file storage
+- Real-time content sync
 
 </td>
 <td width="50%" valign="top">
 
-### 💱 [Currency Converter App](https://currency-conveter-nu.vercel.app/)
+### [Currency Converter App](https://currency-conveter-nu.vercel.app/)
 > Real-time multi-currency converter
 
 **Stack:** React · Exchange Rates API
 
-- 🌍 Live exchange rate data via CDN API
-- 💡 Clean, responsive UI
-- ⚛️ React hooks for dynamic updates
+- Live exchange rate data via CDN API
+- Clean, responsive UI
+- React hooks for dynamic updates
 
 </td>
 </tr>
@@ -133,28 +134,28 @@ const prashant = {
 
 ---
 
-## 🏆 Achievements & Leadership
+## Achievements & Leadership
 
 | Role | Organization | Impact |
 |------|-------------|--------|
-| 🧑‍💻 **Technical Head** | Google Developer Groups (GDG) on Campus | Organized coding workshops, tech talks & developer events |
-| 🎯 **Event Head** | ENIGMA 3.0 — Prayagraj's Largest College Fest | Led end-to-end execution of the Roadies event |
+| **Technical Head** | Google Developer Groups (GDG) on Campus | Organized coding workshops, tech talks & developer events |
+| **Event Head** | ENIGMA 3.0 — Prayagraj's Largest College Fest | Led end-to-end execution of the Roadies event |
 
 ---
 
-## 📜 Certifications
+## Certifications
 
 | Certificate | Issuer |
 |------------|--------|
-| 🤖 Introduction to Generative AI | Google |
-| 🧠 AI Fluency Certificate | Anthropic |
-| 🌐 Web Development — PBEL Certificate | IBM |
-| ☁️ Cloud Essentials | AWS |
-| ☕ Java Summer Training | United Group of Institutions |
+| Introduction to Generative AI | Google |
+| AI Fluency Certificate | Anthropic |
+| Web Development — PBEL Certificate | IBM |
+| Cloud Essentials | AWS |
+| Java Summer Training | United Group of Institutions |
 
 ---
 
-## 📊 GitHub Stats
+## GitHub Stats
 
 <div align="center">
 
@@ -171,7 +172,7 @@ const prashant = {
 
 <div align="center">
 
-### 💬 Let's connect and build something awesome together
+### Let's connect and build something awesome together
 
 [![LinkedIn](https://img.shields.io/badge/Let's%20connect%20on%20LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](http://www.linkedin.com/in/prashant-mishra-617221261)
 

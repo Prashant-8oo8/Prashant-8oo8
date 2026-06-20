@@ -18,8 +18,9 @@ export default function Header({ activeSection, scrollToSection }) {
   const navItems = [
     { label: 'home',       index: 0 },
     { label: 'projects',   index: 1 },
-    { label: 'experience', index: 2 },
-    { label: 'resume',     index: 3 },
+    { label: 'skills',     index: 2 },
+    { label: 'experience', index: 3 },
+    { label: 'resume',     index: 4 },
   ];
 
   return (
