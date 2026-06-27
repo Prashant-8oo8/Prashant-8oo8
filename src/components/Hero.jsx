@@ -11,10 +11,13 @@ const roles = [
 
 export default function Hero({ scrollToSection }) {
   const ctaRef = useRef();
+  const containerRef = useRef(null);
+  
   const [displayed, setDisplayed] = useState("");
   const [roleIndex, setRoleIndex] = useState(0);
   const [deleting, setDeleting] = useState(false);
 
+  // Typewriter Logic (Preserved)
   useEffect(() => {
     const current = roles[roleIndex];
     let timeout;
@@ -31,6 +34,26 @@ export default function Hero({ scrollToSection }) {
     return () => clearTimeout(timeout);
   }, [displayed, deleting, roleIndex]);
 
+  // Entry Landing Animation (Zoom In)
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Animate the main central elements (Text -> Image -> Text)
+      gsap.fromTo(".zoom-element", 
+        { scale: 0.85, opacity: 0, y: 30 },
+        { scale: 1, opacity: 1, y: 0, duration: 1.5, ease: "power4.out", stagger: 0.15 }
+      );
+      
+      // Fade in the bottom UI elements slightly after
+      gsap.fromTo(".fade-up-element",
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 1, delay: 0.6, ease: "power3.out", stagger: 0.1 }
+      );
+    }, containerRef);
+
+    return () => ctx.revert(); // Cleanup on unmount
+  }, []);
+
+  // GSAP Magnetic Button Logic (Preserved)
   const handleMouseMove = (e) => {
     const btn = ctaRef.current;
     if (!btn) return;
@@ -49,81 +72,75 @@ export default function Hero({ scrollToSection }) {
   return (
     <section
       id="hero-section"
-      className="scroll-section w-full min-h-screen px-6 md:px-16 pt-32 pb-16 flex items-center bg-gradient-to-b from-[#1c1c1c] to-[#131313] relative overflow-hidden"
+      ref={containerRef}
+      className="scroll-section relative w-full h-screen bg-[#fdfdfc] text-zinc-900 overflow-hidden selection:bg-[#FFD700] selection:text-black"
     >
-      {/* Teal radial glow — left */}
-      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_20%_30%,rgba(0,206,209,0.05)_0%,rgba(0,0,0,0)_60%)]" />
-      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_80%_70%,rgba(255,140,0,0.03)_0%,rgba(0,0,0,0)_60%)]" />
-
-      {/* Main Grid Container */}
-      <div className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center z-10">
-
-        {/* Left Side: Written Content (7 columns on desktop) */}
-        <div className="col-span-12 md:col-span-7 flex flex-col justify-center items-start text-left select-none relative">
-          <p className="label-caps text-[#00ced1] mb-6 flex items-center gap-2 animate-pulse">
-            <span className="h-[2px] w-8 bg-[#00ced1]" />
-            PORTFOLIO ARCHIVE // 2026
-          </p>
-
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold font-sans tracking-tight text-[#e4e2e1] leading-[1.1] mb-4">
-            I'm Prashant Mishra
-          </h1>
-
-          {/* Typewriter */}
-          <h2 className="text-lg sm:text-xl md:text-2xl font-mono font-medium text-[#00ced1] mb-6 h-9 flex items-center gap-1">
-            <span>{displayed}</span>
-            <span className="inline-block w-[2px] h-[1.2em] bg-[#00ced1] animate-[blink_1s_step-end_infinite]" />
-          </h2>
-
-          <p className="text-sm sm:text-base font-light text-[#c4c7c7] max-w-lg leading-relaxed mb-10">
-            I build production-ready full-stack products that ship fast, scale well, and solve real problems. Currently in my 4th year of CS — already shipping AI-powered apps used by real users.
-          </p>
-
-          <button
-            ref={ctaRef}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            onClick={() => scrollToSection(1)}
-            className="relative px-8 py-4 bg-transparent border border-[#ff8c00] text-[#ff8c00] rounded-sm text-xs label-caps hover:bg-[#ff8c00] hover:text-[#131313] transition-colors duration-500 shadow-[0_0_15px_rgba(255,140,0,0.15)] hover:shadow-[0_0_25px_rgba(255,140,0,0.4)] cursor-pointer"
-          >
-            Explore My Work
-          </button>
-        </div>
-
-        {/* Right Side: Contained Photo (5 columns on desktop) */}
-        <div className="md:col-span-5 hidden md:flex justify-end items-center w-full">
-          <div className="relative w-full max-w-[360px] aspect-[4/5] rounded-lg glass-card glow-border overflow-hidden p-2 shadow-2xl group ml-auto">
-            {/* Ambient backing glow on hover */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-[#00ced1]/10 to-[#ff8c00]/10 rounded-lg blur opacity-0 group-hover:opacity-100 transition duration-700 pointer-events-none" />
-
-            <div className="relative w-full h-full rounded-md overflow-hidden bg-[#181818]">
-              <img
-                src={prashantImg}
-                alt="Prashant Mishra"
-                className="w-full h-full object-cover object-top opacity-50 grayscale group-hover:grayscale-0 group-hover:opacity-80 transition-all duration-700 ease-out group-hover:scale-103"
-                style={{ filter: 'contrast(1.02) brightness(0.9)' }}
-              />
-              {/* Left edge soft melt effect */}
-              <div className="absolute inset-0 z-10 pointer-events-none bg-[linear-gradient(to_right,#131313_0%,#131313_10%,transparent_55%)]" />
-
-              {/* Gentle overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
-            </div>
-          </div>
-        </div>
-
+      {/* 1. Top Left Label (z-30 to stay above everything) */}
+      <div className="absolute top-12 left-6 md:top-16 md:left-16 z-30 fade-up-element">
+        <p className="text-xs md:text-sm font-bold tracking-[0.2em] text-zinc-400 uppercase flex items-center gap-3">
+          <span className="w-8 h-[2px] bg-zinc-300"></span>
+          Portfolio Archive // 2026
+        </p>
       </div>
 
-      {/* Scroll indicator */}
+      {/* 2. LAYER 1 (BEHIND IMAGE): First Name (z-0) */}
+      {/* Adjusted top position to push it higher up */}
+      <div className="absolute top-[25%] md:top-[22%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center z-0 pointer-events-none px-4 zoom-element">
+        <h1 className="text-[15vw] md:text-[10vw] lg:text-[11rem] font-black leading-[0.8] tracking-tighter uppercase whitespace-nowrap text-zinc-900">
+          I'M PRASHANT
+        </h1>
+      </div>
+
+      <div className="absolute top-2/5 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 flex justify-center items-center pointer-events-none mt-4 md:mt-0 zoom-element">
+        <div className="relative w-64 h-[380px] md:w-[350px] md:h-[500px] rounded-[150px] overflow-hidden group bg-transparent pointer-events-auto">
+          <img
+            src={prashantImg}
+            alt="Prashant Mishra"
+            className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700 ease-out scale-100 group-hover:scale-105"
+          />
+        </div>
+      </div>
+      <div className="absolute top-[68%] md:top-[68%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center z-20 pointer-events-none px-4 zoom-element">
+       <h1 className="text-[18vw] md:text-[14vw] lg:text-[11rem] font-bold italic leading-[0.8] tracking-tighter uppercase whitespace-nowrap text-transparent drop-shadow-2xl"
+        style={{ WebkitTextStroke: "4px #6d87a8ff"}}>
+          MISHRA<span className="text-[#FFD700]">.</span>
+       </h1>
+      </div>
+      <div className="absolute bottom-8 left-6 md:bottom-[12%] md:left-16 flex flex-col items-start max-w-[320px] md:max-w-md z-30">
+        
+        {/* Typewriter text */}
+        <h2 className="text-sm md:text-xl font-mono font-medium text-zinc-800 mb-5 h-6 flex items-center gap-1 bg-white/90 backdrop-blur-sm px-3 py-2 rounded-md border border-zinc-200 shadow-sm fade-up-element">
+          <span>{displayed}</span>
+          <span className="inline-block w-[3px] h-[1em] bg-[#FFD700] animate-[blink_1s_step-end_infinite]" />
+        </h2>
+
+        {/* Description */}
+        <p className="text-sm md:text-base font-medium text-zinc-600 leading-relaxed mb-8 bg-white/60 backdrop-blur-md p-3 rounded-lg md:bg-transparent md:p-0 md:backdrop-blur-none fade-up-element">
+          I build production-ready full-stack products that ship fast, scale well, and solve real problems. Currently in my 4th year of CS — shipping AI-powered apps used by real users.
+        </p>
+
+        {/* Minimalist Solid CTA */}
+        <button
+          ref={ctaRef}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+          onClick={() => scrollToSection(1)}
+          className="relative px-8 py-4 md:px-10 md:py-5 bg-zinc-900 text-white rounded-full text-[10px] md:text-xs font-bold uppercase tracking-[0.15em] hover:bg-[#FFD700] hover:text-black transition-colors duration-500 cursor-pointer shadow-xl fade-up-element"
+        >
+          Explore My Work
+        </button>
+      </div>
+
+      {/* 6. Minimalist Scroll Indicator (z-30) */}
       <div
         onClick={() => scrollToSection(1)}
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center cursor-pointer group z-10"
+        className="hidden md:flex absolute bottom-12 right-16 flex-col items-center cursor-pointer group z-30 fade-up-element"
       >
-        <span className="text-[10px] label-caps text-[#8e9192] group-hover:text-[#00ced1] transition-colors duration-300 mb-2">
-          SCROLL DOWN
+        <span className="text-[10px] font-bold tracking-widest text-zinc-400 group-hover:text-zinc-900 transition-colors duration-300 mb-3 uppercase" style={{ writingMode: 'vertical-rl' }}>
+          Scroll Down
         </span>
-        <div className="w-[1px] h-10 bg-gradient-to-b from-[#8e9192] to-transparent relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-1/2 bg-[#00ced1] indicator-glow rounded-full animate-bounce" />
+        <div className="w-[2px] h-12 bg-zinc-200 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-1/2 bg-zinc-900 animate-bounce" />
         </div>
       </div>
     </section>

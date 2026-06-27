@@ -16,15 +16,15 @@ export default function Header({ activeSection, scrollToSection }) {
   };
 
   const navItems = [
-    { label: 'home',       index: 0 },
-    { label: 'projects',   index: 1 },
-    { label: 'skills',     index: 2 },
+    { label: 'home', index: 0 },
+    { label: 'projects', index: 1 },
+    { label: 'skills', index: 2 },
     { label: 'experience', index: 3 },
-    { label: 'resume',     index: 4 },
+    { label: 'resume', index: 4 },
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 px-6 md:px-16 py-5 flex justify-between items-center border-b border-white/[0.06] bg-[#131313]/80 backdrop-blur-sm">
+    <header className="fixed top-0 left-0 w-full z-50 px-6 md:px-16 py-5 flex justify-between items-center border-b border-zinc-200 bg-[#fdfdfc]/80 backdrop-blur-md">
 
       {/* Logo */}
       <button
@@ -34,12 +34,12 @@ export default function Header({ activeSection, scrollToSection }) {
         className="flex items-center gap-3 group cursor-pointer"
       >
         {/* Monogram mark */}
-        <span 
-          className="hidden sm:block font-mono text-[11px] tracking-[0.25em] text-[#8e9192] group-hover:text-[#e4e2e1] transition-colors duration-300"
+        <span
+          className="hidden sm:block font-mono text-[13px] tracking-[0.25em] text-zinc-600 group-hover:text-zinc-900 transition-colors duration-300"
           style={{
             fontFamily: "'Dancing Script', cursive",
             fontWeight: "900",
-            letterSpacing: "1em"
+            letterSpacing: "0.2em"
           }}
         >
           PRASHANT MISHRA
@@ -54,29 +54,27 @@ export default function Header({ activeSection, scrollToSection }) {
             onClick={() => scrollToSection(item.index)}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            className={`relative font-mono text-[11px] tracking-[0.15em] uppercase pb-1 transition-colors duration-300 cursor-pointer ${
-              activeSection === item.index
-                ? 'text-[#e4e2e1]'
-                : 'text-[#555858] hover:text-[#8e9192]'
-            }`}
+            className={`relative font-mono text-[11px] tracking-[0.15em] uppercase pb-1 transition-colors duration-300 cursor-pointer ${activeSection === item.index
+                ? 'text-zinc-900 font-bold'
+                : 'text-zinc-500 hover:text-zinc-800'
+              }`}
           >
             {item.label}
 
             {/* Active underline */}
             <span
-              className={`absolute bottom-0 left-0 h-[1px] bg-[#00ced1] transition-all duration-500 ease-out ${
-                activeSection === item.index ? 'w-full opacity-100' : 'w-0 opacity-0'
-              }`}
+              className={`absolute bottom-0 left-0 h-[2px] bg-[#FFD700] transition-all duration-500 ease-out ${activeSection === item.index ? 'w-full opacity-100' : 'w-0 opacity-0'
+                }`}
             />
           </button>
         ))}
 
         {/* Hire me dot-accent */}
-        
+
         <a href="mailto:prashant32064@gmail.com"
-          className="hidden md:flex items-center gap-2 font-mono text-[11px] tracking-[0.15em] uppercase text-[#555858] hover:text-[#e4e2e1] transition-colors duration-300 group">
-        
-          <span className="w-1.5 h-1.5 rounded-full bg-[#00ced1] group-hover:animate-ping" />
+          className="hidden md:flex items-center gap-2 font-mono text-[11px] tracking-[0.15em] uppercase text-zinc-500 hover:text-zinc-900 transition-colors duration-300 group">
+
+          <span className="w-2 h-2 rounded-full bg-[#FFD700] group-hover:animate-ping" />
           hire me
         </a>
       </nav>

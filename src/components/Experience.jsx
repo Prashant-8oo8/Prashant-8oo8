@@ -16,12 +16,6 @@ const Linkedin = (props) => (
   </svg>
 );
 
-const Twitter = (props) => (
-  <svg viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" className={props.className}>
-    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
-  </svg>
-);
-
 export default function Experience() {
   const mailButtonRef = useRef();
 
@@ -57,19 +51,19 @@ export default function Experience() {
   return (
     <section 
       id="experience-section" 
-      className="scroll-section w-full min-h-screen px-6 md:px-16 pt-28 md:pt-32 pb-24 md:pb-40 flex flex-col justify-center items-start bg-gradient-to-b from-[#131313] to-[#0e0e0e] relative"
+      className="scroll-section w-full min-h-screen px-6 md:px-16 py-24 md:py-32 flex flex-col justify-center items-start bg-[#fdfdfc] relative selection:bg-[#FFD700] selection:text-black"
     >
       {/* Background Lighting Vignette Accent */}
-      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_30%_80%,rgba(0,206,209,0.05)_0%,rgba(0,0,0,0)_60%)]" />
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_30%_80%,rgba(255,215,0,0.06)_0%,rgba(0,0,0,0)_60%)]" />
 
       <div className="w-full max-w-6xl mx-auto z-10 flex flex-col gap-12 md:gap-16 h-auto">
         {/* Top Header */}
         <div>
-          <p className="label-caps text-[#00ced1] mb-3 flex items-center gap-2">
-            <span className="h-[2px] w-8 bg-[#00ced1]" />
+          <p className="text-xs font-bold tracking-[0.2em] uppercase text-zinc-400 mb-3 flex items-center gap-2">
+            <span className="h-[2px] w-8 bg-zinc-300" />
             LEADERSHIP &amp; IMPACT
           </p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-sans tracking-tight text-[#e4e2e1] mb-10 md:mb-14">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter uppercase text-zinc-900 mb-10 md:mb-14">
             Experience &amp; Leadership
           </h2>
         </div>
@@ -78,44 +72,44 @@ export default function Experience() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start">
           
           {/* Left Column - Experience Cards */}
-          <div className="space-y-4">
+          <div className="space-y-6">
             {/* Card 1: GDG on Campus */}
-            <div className="p-4 md:p-5 rounded-lg glass-card flex flex-col sm:flex-row gap-4 hover:border-[#00ced1]/30 transition-all duration-300">
-              <div className="p-2.5 bg-[#131313] border border-white/5 rounded-sm h-fit">
-                <Sparkles className="w-5 h-5 text-[#00ced1]" />
+            <div className="p-6 md:p-8 rounded-3xl bg-zinc-100 border border-zinc-200 flex flex-col sm:flex-row gap-4 hover:border-[#FFD700]/50 hover:shadow-lg transition-all duration-300">
+              <div className="p-3 bg-zinc-200 border border-zinc-300 rounded-2xl h-fit">
+                <Sparkles className="w-5 h-5 text-zinc-900" />
               </div>
               <div>
-                <span className="text-[10px] font-mono text-[#00ced1] tracking-widest block mb-1">
+                <span className="text-[10px] font-mono text-zinc-500 tracking-widest block mb-1">
                   CURRENT ROLE // LEADERSHIP
                 </span>
-                <h3 className="text-base sm:text-lg font-bold text-[#e4e2e1] mb-1">
+                <h3 className="text-base sm:text-lg font-black tracking-tighter uppercase text-zinc-900 mb-1">
                   Technical Head
                 </h3>
-                <p className="text-xs font-mono text-[#8e9192] mb-2">
+                <p className="text-xs font-mono text-zinc-500 mb-2">
                   Google Developer Groups (GDG) on Campus
                 </p>
-                <p className="text-xs sm:text-sm font-light text-[#c4c7c7] leading-relaxed">
+                <p className="text-xs sm:text-sm font-medium text-zinc-600 leading-relaxed">
                   Focusing on mentoring junior developers, planning community curriculum, and orchestrating large-scale technical hackathons and code-alongs.
                 </p>
               </div>
             </div>
 
             {/* Card 2: Enigma Roadies */}
-            <div className="p-4 md:p-5 rounded-lg glass-card flex flex-col sm:flex-row gap-4 hover:border-[#ff8c00]/30 transition-all duration-300">
-              <div className="p-2.5 bg-[#131313] border border-white/5 rounded-sm h-fit">
-                <Trophy className="w-5 h-5 text-[#ff8c00]" />
+            <div className="p-6 md:p-8 rounded-3xl bg-zinc-100 border border-zinc-200 flex flex-col sm:flex-row gap-4 hover:border-[#FFD700]/50 hover:shadow-lg transition-all duration-300">
+              <div className="p-3 bg-zinc-200 border border-zinc-300 rounded-2xl h-fit">
+                <Trophy className="w-5 h-5 text-zinc-900" />
               </div>
               <div>
-                <span className="text-[10px] font-mono text-[#ff8c00] tracking-widest block mb-1">
+                <span className="text-[10px] font-mono text-zinc-500 tracking-widest block mb-1">
                   EVENT LEADERSHIP // ENIGMA
                 </span>
-                <h3 className="text-base sm:text-lg font-bold text-[#e4e2e1] mb-1">
+                <h3 className="text-base sm:text-lg font-black tracking-tighter uppercase text-zinc-900 mb-1">
                   Event Head — &quot;Roadies&quot;
                 </h3>
-                <p className="text-xs font-mono text-[#8e9192] mb-2">
+                <p className="text-xs font-mono text-zinc-500 mb-2">
                   ENIGMA College Fest
                 </p>
-                <p className="text-xs sm:text-sm font-light text-[#c4c7c7] leading-relaxed">
+                <p className="text-xs sm:text-sm font-medium text-zinc-600 leading-relaxed">
                   Led event design, logistical planning, and team recruitment for the signature obstacle-based performance event, coordinating over 100+ active participants.
                 </p>
               </div>
@@ -125,8 +119,8 @@ export default function Experience() {
           {/* Right Column - Brief Call to Action / Info */}
           <div className="flex flex-col h-full py-2">
             <div className="select-none">
-              <h4 className="text-lg sm:text-xl font-bold text-[#e4e2e1] mb-4">Let&apos;s build the future together.</h4>
-              <p className="text-sm sm:text-base font-light text-[#c4c7c7] leading-relaxed mb-6">
+              <h4 className="text-lg sm:text-xl font-black tracking-tighter uppercase text-zinc-900 mb-4">Let&apos;s build the future together.</h4>
+              <p className="text-sm sm:text-base font-medium text-zinc-600 leading-relaxed mb-8">
                 I am always open to discussing technical sponsorships, mentoring opportunities, Full-Stack contracts, or high-performance WebGL integrations.
               </p>
               
@@ -136,7 +130,7 @@ export default function Experience() {
                 ref={mailButtonRef}
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
-                className="inline-flex items-center gap-3 px-6 py-3.5 bg-gradient-to-r from-[#1c1c1c] to-[#2d2d2d] border border-white/10 text-[#e4e2e1] hover:border-[#00ced1]/50 hover:text-[#00ced1] rounded-sm text-xs label-caps transition-all duration-500 shadow-md cursor-pointer"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-zinc-900 text-white rounded-full text-xs font-bold uppercase tracking-[0.15em] hover:bg-[#FFD700] hover:text-black transition-colors duration-500 shadow-xl cursor-pointer"
               >
                 <Mail className="w-4 h-4" />
                 Get In Touch
@@ -145,14 +139,11 @@ export default function Experience() {
             
             {/* Social Icons footer */}
             <div className="flex gap-6 mt-auto pt-16">
-              <a href="https://github.com" target="_blank" rel="noreferrer" className="text-[#555858] hover:text-[#00ced1] transition-colors duration-300">
+              <a href="https://github.com/Prashant-8oo8" target="_blank" rel="noreferrer" className="text-zinc-400 hover:text-black transition-colors duration-300">
                 <Github className="w-5 h-5" />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="text-[#555858] hover:text-[#00ced1] transition-colors duration-300">
+              <a href="https://www.linkedin.com/in/prashant-mishra-617221261/" target="_blank" rel="noreferrer" className="text-zinc-400 hover:text-black transition-colors duration-300">
                 <Linkedin className="w-5 h-5" />
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noreferrer" className="text-[#555858] hover:text-[#00ced1] transition-colors duration-300">
-                <Twitter className="w-5 h-5" />
               </a>
             </div>
 

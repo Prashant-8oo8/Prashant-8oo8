@@ -2,53 +2,49 @@
 @import "tailwindcss";
 
 @theme {
-  --color-surface: #131313;
-  --color-surface-dim: #131313;
-  --color-surface-bright: #393939;
-  --color-surface-container-lowest: #0e0e0e;
-  --color-surface-container-low: #1b1c1c;
-  --color-surface-container: #1f2020;
-  --color-surface-container-high: #2a2a2a;
-  --color-surface-container-highest: #353535;
-  --color-on-surface: #e4e2e1;
-  --color-on-surface-variant: #c4c7c7;
-  --color-inverse-surface: #e4e2e1;
-  --color-inverse-on-surface: #303030;
-  --color-outline: #8e9192;
-  --color-outline-variant: #444748;
-  --color-surface-tint: #c8c6c5;
-  --color-primary: #c8c6c5;
-  --color-on-primary: #313030;
-  --color-primary-container: #1c1c1c;
-  --color-on-primary-container: #858484;
-  --color-inverse-primary: #5f5e5e;
-  --color-secondary: #00ced1;
-  --color-on-secondary: #003738;
-  --color-secondary-container: #00cdd0;
-  --color-on-secondary-container: #005253;
-  --color-tertiary: #ff8c00;
-  --color-on-tertiary: #4d2600;
-  --color-tertiary-container: #2f1500;
-  --color-on-tertiary-container: #c86c00;
-  --color-error: #ffb4ab;
-  --color-on-error: #690005;
-  --color-error-container: #93000a;
-  --color-on-error-container: #ffdad6;
-  --color-primary-fixed: #e5e2e1;
-  --color-primary-fixed-dim: #c8c6c5;
-  --color-on-primary-fixed: #1b1b1b;
-  --color-on-primary-fixed-variant: #474746;
-  --color-secondary-fixed: #5af8fb;
-  --color-secondary-fixed-dim: #2ddbde;
-  --color-on-secondary-fixed: #002020;
-  --color-on-secondary-fixed-variant: #004f51;
-  --color-tertiary-fixed: #ffdcc3;
-  --color-tertiary-fixed-dim: #ffb77d;
-  --color-on-tertiary-fixed: #2f1500;
-  --color-on-tertiary-fixed-variant: #6e3900;
-  --color-background: #131313;
-  --color-on-background: #e4e2e1;
-  --color-surface-variant: #353535;
+  --color-surface: #fdfdfc;
+  --color-surface-dim: #fdfdfc;
+  --color-surface-bright: #ffffff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f4f4f5;
+  --color-surface-container: #e4e4e7;
+  --color-surface-container-high: #d4d4d8;
+  --color-surface-container-highest: #a1a1aa;
+  --color-on-surface: #18181b;
+  --color-on-surface-variant: #52525b;
+  --color-inverse-surface: #18181b;
+  --color-inverse-on-surface: #ffffff;
+  --color-outline: #d4d4d8;
+  --color-outline-variant: #e4e4e7;
+  --color-surface-tint: #18181b;
+  --color-primary: #18181b;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #f4f4f5;
+  --color-on-primary-container: #18181b;
+  --color-inverse-primary: #a1a1aa;
+  --color-secondary: #FFD700;
+  --color-on-secondary: #000000;
+  --color-secondary-container: #FFD700;
+  --color-on-secondary-container: #000000;
+  --color-tertiary: #FFD700;
+  --color-on-tertiary: #000000;
+  --color-tertiary-container: #f4f4f5;
+  --color-on-tertiary-container: #FFD700;
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #410002;
+  --color-primary-fixed: #18181b;
+  --color-primary-fixed-dim: #27272a;
+  --color-on-primary-fixed: #ffffff;
+  --color-on-primary-fixed-variant: #a1a1aa;
+  --color-secondary-fixed: #FFD700;
+  --color-secondary-fixed-dim: #eab308;
+  --color-on-secondary-fixed: #000000;
+  --color-on-secondary-fixed-variant: #000000;
+  --color-background: #fdfdfc;
+  --color-on-background: #18181b;
+  --color-surface-variant: #f4f4f5;
 
   --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-heading: 'Space Grotesk', 'Inter', sans-serif;
@@ -64,9 +60,15 @@ body,
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-color: #131313;
-  color: #e4e2e1;
+  background-color: #fdfdfc;
+  color: #18181b;
   font-family: var(--font-sans);
+}
+
+/* Global selection color */
+::selection {
+  background-color: #FFD700;
+  color: #000000;
 }
 
 /* Strict Scroll Snapping Layout */
@@ -85,67 +87,67 @@ body,
   position: relative;
 }
 
-/* Hide scrollbar default, styled custom scrollbar for desktop */
+/* Styled custom scrollbar for light theme */
 .scroll-container::-webkit-scrollbar {
   width: 6px;
 }
 
 .scroll-container::-webkit-scrollbar-track {
-  background: rgba(19, 19, 19, 0.8);
+  background: rgba(253, 253, 252, 0.8);
 }
 
 .scroll-container::-webkit-scrollbar-thumb {
-  background: rgba(0, 206, 209, 0.2);
+  background: rgba(24, 24, 27, 0.2);
   border-radius: 4px;
 }
 
 .scroll-container::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 206, 209, 0.5);
+  background: rgba(255, 215, 0, 0.8);
 }
 
-/* Cinematic lighting layers */
+/* Cinematic lighting layers: Gold orbs strictly */
 .ambient-glow {
   position: fixed;
   width: 60vw;
   height: 60vw;
   border-radius: 50%;
-  filter: blur(100px);
+  filter: blur(120px);
   pointer-events: none;
-  opacity: 0.12;
-  z-index: 1;
+  opacity: 0.35;
+  z-index: 0;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), background 1s ease;
 }
 
 .glow-teal {
-  background: radial-gradient(circle, rgba(0, 206, 209, 0.8) 0%, rgba(0, 0, 0, 0) 70%);
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.35) 0%, rgba(253, 253, 252, 0) 70%);
 }
 
 .glow-orange {
-  background: radial-gradient(circle, rgba(255, 140, 0, 0.6) 0%, rgba(0, 0, 0, 0) 70%);
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.25) 0%, rgba(253, 253, 252, 0) 70%);
 }
 
-/* Glassmorphism utility classes */
+/* Glassmorphism utility classes for light theme */
 .glass-header {
-  background: rgba(19, 19, 19, 0.7);
+  background: rgba(253, 253, 252, 0.8);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(24, 24, 27, 0.08);
 }
 
 .glass-card {
-  background: rgba(27, 28, 28, 0.45);
+  background: rgba(244, 244, 245, 0.6);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+  border: 1px solid rgba(24, 24, 27, 0.08);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
 }
 
 .glass-card:hover {
-  border-color: rgba(0, 206, 209, 0.3);
-  box-shadow: 0 0 30px rgba(0, 206, 209, 0.1);
+  border-color: rgba(255, 215, 0, 0.6);
+  box-shadow: 0 15px 35px rgba(255, 215, 0, 0.12);
 }
 
-/* Anamorphic Flare / Border light effects */
+/* Border light effects with Gold color */
 .glow-border {
   position: relative;
   overflow: hidden;
@@ -157,7 +159,7 @@ body,
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(135deg, rgba(0, 206, 209, 0.3) 0%, rgba(255, 140, 0, 0) 50%, rgba(255, 140, 0, 0.3) 100%);
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.4) 0%, rgba(24, 24, 27, 0) 50%, rgba(255, 215, 0, 0.4) 100%);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -166,13 +168,10 @@ body,
 
 /* Pulse / Interactive states */
 @keyframes pulseGlow {
-
-  0%,
-  100% {
+  0%, 100% {
     opacity: 0.3;
     transform: scale(1);
   }
-
   50% {
     opacity: 0.6;
     transform: scale(1.05);
@@ -180,12 +179,13 @@ body,
 }
 
 .indicator-glow {
-  box-shadow: 0 0 15px rgba(0, 206, 209, 0.5);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
   animation: pulseGlow 2s infinite ease-in-out;
 }
 
 .nav-link-active {
-  color: var(--color-secondary);
+  color: #18181b;
+  font-weight: 700;
 }
 
 .nav-link-active::after {
@@ -203,11 +203,10 @@ h3 {
 .label-caps {
   font-family: var(--font-mono);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
-/* In your main CSS file (e.g. index.css or globals.css) */
 
 @keyframes blink {
   0%, 100% { opacity: 1; }

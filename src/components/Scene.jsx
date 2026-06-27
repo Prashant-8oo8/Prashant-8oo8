@@ -38,7 +38,7 @@ function LatticeNode({ scrollProgress }) {
         driftDir: new THREE.Vector3(driftX, driftY, driftZ),
         speed,
         scale: 0.05 + Math.random() * 0.08,
-        color: i % 2 === 0 ? '#00ced1' : '#ff8c00', // Teal or Orange
+        color: i % 2 === 0 ? '#FFD700' : '#18181b', // Gold or Zinc-900
       });
     }
     return temp;
@@ -107,11 +107,11 @@ function LatticeNode({ scrollProgress }) {
       <mesh ref={centralCoreRef}>
         <icosahedronGeometry args={[0.9, 1]} />
         <meshStandardMaterial 
-          color="#1b1c1c" 
+          color="#18181b" 
           roughness={0.1}
           metalness={0.9}
           wireframe={false}
-          emissive="#00ced1"
+          emissive="#FFD700"
           emissiveIntensity={0.25}
         />
       </mesh>
@@ -120,7 +120,7 @@ function LatticeNode({ scrollProgress }) {
       <mesh ref={wireframeShellRef}>
         <icosahedronGeometry args={[1.6, 2]} />
         <meshBasicMaterial 
-          color="#00ced1" 
+          color="#FFD700" 
           wireframe={true} 
           transparent={true} 
           opacity={0.4}
@@ -160,7 +160,7 @@ function LatticeNode({ scrollProgress }) {
         const lineGeometry = new THREE.BufferGeometry().setFromPoints(points);
         return (
           <line key={`line-${sat.id}`} geometry={lineGeometry}>
-            <lineBasicMaterial color="#444748" transparent opacity={0.25} />
+            <lineBasicMaterial color="#a1a1aa" transparent opacity={0.25} />
           </line>
         );
       })}
@@ -183,17 +183,17 @@ export default function Scene({ scrollProgress }) {
         {/* Ambient lighting */}
         <ambientLight intensity={0.25} />
         
-        {/* High-contrast Teal and Orange point lights to create cinematic mood */}
+        {/* High-contrast Gold and Zinc point lights to create cinematic mood */}
         <pointLight 
           position={[-10, 5, -5]} 
-          color="#00ced1" 
+          color="#FFD700" 
           intensity={5.0} 
           distance={30} 
           decay={1.5}
         />
         <pointLight 
           position={[10, -5, 5]} 
-          color="#ff8c00" 
+          color="#a1a1aa" 
           intensity={6.0} 
           distance={30} 
           decay={1.5}

@@ -22,23 +22,14 @@ export default function App() {
 
   // Background color changes smoothly based on active section
   const getBgColor = () => {
-    switch (activeSection) {
-      case 0:
-        return '#1c1c1c'; // Charcoal
-      case 1:
-        return '#131313'; // Dark Slate / Charcoal dim
-      case 2:
-        return '#0e0e0e'; // Deep Slate
-      default:
-        return '#131313';
-    }
+    return '#fdfdfc';
   };
 
   // Scroll to a specific section programmatically
   const scrollToSection = (index) => {
     const container = containerRef.current;
     if (!container) return;
-    
+
     const sections = container.querySelectorAll('.scroll-section');
     if (sections[index]) {
       container.scrollTo({
@@ -54,11 +45,11 @@ export default function App() {
     const container = containerRef.current;
     if (!container) return;
     const scrollTop = container.scrollTop;
-    
+
     // Determine section index based on scroll offset
     const sections = container.querySelectorAll('.scroll-section');
     let currentIndex = activeSection;
-    
+
     sections.forEach((section, index) => {
       // If the section top is near the scroll top (with some offset for the navbar)
       if (section.offsetTop <= scrollTop + 150) {
@@ -92,7 +83,7 @@ export default function App() {
     const sections = container.querySelectorAll('.scroll-section');
     sections.forEach((section) => {
       const animatedElements = section.querySelectorAll('h1, h2, p, button, .glass-card, div.border-t');
-      
+
       // Set initial states
       gsap.set(animatedElements, {
         y: 40,
@@ -129,7 +120,7 @@ export default function App() {
     // 3. Cinematic Glows - Inertia Mouse Follower Effect
     const handleMouseMove = (e) => {
       const { clientX, clientY } = e;
-      
+
       // Shift glow centers relative to window center
       const offsetX = clientX - window.innerWidth / 2;
       const offsetY = clientY - window.innerHeight / 2;
@@ -159,18 +150,18 @@ export default function App() {
   }, []);
 
   return (
-    <div 
+    <div
       className="w-full h-full relative transition-colors duration-1000 ease-out overflow-hidden"
       style={{ backgroundColor: getBgColor() }}
     >
       {/* Cinematic Lighting Layers (Floating Glow Blooms) */}
-      <div 
-        ref={glowTealRef} 
-        className="ambient-glow glow-teal top-[-10%] left-[-10%]" 
+      <div
+        ref={glowTealRef}
+        className="ambient-glow glow-teal top-[-10%] left-[-10%]"
       />
-      <div 
-        ref={glowOrangeRef} 
-        className="ambient-glow glow-orange bottom-[-10%] right-[-10%]" 
+      <div
+        ref={glowOrangeRef}
+        className="ambient-glow glow-orange bottom-[-10%] right-[-10%]"
       />
 
       {/* Floating 3D Canvas Scene - Placed in background, reused across page */}
@@ -182,7 +173,7 @@ export default function App() {
       <Header activeSection={activeSection} scrollToSection={scrollToSection} />
 
       {/* Main Snap Scrolling Container */}
-      <main 
+      <main
         ref={containerRef}
         onScroll={handleScroll}
         className="scroll-container w-full h-full"
@@ -190,8 +181,8 @@ export default function App() {
         <Hero scrollToSection={scrollToSection} />
         <Projects />
         <Skills />
-        <Experience />
         <Resume />
+        <Experience />
       </main>
     </div>
   );
