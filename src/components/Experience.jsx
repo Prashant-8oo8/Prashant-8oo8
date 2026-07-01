@@ -51,25 +51,25 @@ export default function Experience() {
   return (
     <section 
       id="experience-section" 
-      className="scroll-section w-full min-h-screen px-6 md:px-16 py-24 md:py-32 flex flex-col justify-center items-start bg-[#fdfdfc] relative selection:bg-[#FFD700] selection:text-black"
+      className="scroll-section w-full min-h-screen px-4 sm:px-6 md:px-16 py-16 sm:py-24 md:py-32 flex flex-col justify-center items-start bg-[#fdfdfc] relative selection:bg-[#FFD700] selection:text-black"
     >
       {/* Background Lighting Vignette Accent */}
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_30%_80%,rgba(255,215,0,0.06)_0%,rgba(0,0,0,0)_60%)]" />
 
-      <div className="w-full max-w-6xl mx-auto z-10 flex flex-col gap-12 md:gap-16 h-auto">
+      <div className="w-full max-w-6xl mx-auto z-10 flex flex-col gap-8 sm:gap-12 md:gap-16 h-auto">
         {/* Top Header */}
         <div>
           <p className="text-xs font-bold tracking-[0.2em] uppercase text-zinc-400 mb-3 flex items-center gap-2">
             <span className="h-[2px] w-8 bg-zinc-300" />
             LEADERSHIP &amp; IMPACT
           </p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter uppercase text-zinc-900 mb-10 md:mb-14">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter uppercase text-zinc-900 mb-6 sm:mb-10 md:mb-14">
             Experience &amp; Leadership
           </h2>
         </div>
 
         {/* Core Timeline Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-16 items-start">
           
           {/* Left Column - Experience Cards */}
           <div className="space-y-6">
@@ -130,7 +130,7 @@ export default function Experience() {
                 ref={mailButtonRef}
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
-                className="inline-flex items-center gap-3 px-8 py-4 bg-zinc-900 text-white rounded-full text-xs font-bold uppercase tracking-[0.15em] hover:bg-[#FFD700] hover:text-black transition-colors duration-500 shadow-xl cursor-pointer"
+                className="inline-flex items-center gap-3 px-6 py-3 sm:px-8 sm:py-4 min-h-[44px] bg-zinc-900 text-white rounded-full text-xs font-bold uppercase tracking-[0.15em] hover:bg-[#FFD700] hover:text-black transition-colors duration-500 shadow-xl cursor-pointer"
               >
                 <Mail className="w-4 h-4" />
                 Get In Touch
@@ -138,11 +138,11 @@ export default function Experience() {
             </div>
             
             {/* Social Icons footer */}
-            <div className="flex gap-6 mt-auto pt-16">
-              <a href="https://github.com/Prashant-8oo8" target="_blank" rel="noreferrer" className="text-zinc-400 hover:text-black transition-colors duration-300">
+            <div className="flex gap-4 sm:gap-6 mt-8 md:mt-auto pt-8 md:pt-16">
+              <a href="https://github.com/Prashant-8oo8" target="_blank" rel="noreferrer" className="flex items-center justify-center w-11 h-11 min-h-[44px] min-w-[44px] rounded-xl text-zinc-400 hover:text-black hover:bg-zinc-100 transition-all duration-300">
                 <Github className="w-5 h-5" />
               </a>
-              <a href="https://www.linkedin.com/in/prashant-mishra-617221261/" target="_blank" rel="noreferrer" className="text-zinc-400 hover:text-black transition-colors duration-300">
+              <a href="https://www.linkedin.com/in/prashant-mishra-617221261/" target="_blank" rel="noreferrer" className="flex items-center justify-center w-11 h-11 min-h-[44px] min-w-[44px] rounded-xl text-zinc-400 hover:text-black hover:bg-zinc-100 transition-all duration-300">
                 <Linkedin className="w-5 h-5" />
               </a>
             </div>

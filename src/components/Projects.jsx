@@ -82,14 +82,14 @@ export default function Projects() {
   return (
     <section 
       id="projects-section" 
-      className="scroll-section w-full min-h-screen px-6 md:px-16 py-24 md:py-32 flex flex-col justify-center items-start bg-[#fdfdfc] relative selection:bg-[#FFD700] selection:text-black"
+      className="scroll-section w-full min-h-screen px-4 sm:px-6 md:px-16 py-16 sm:py-24 md:py-32 flex flex-col justify-center items-start bg-[#fdfdfc] relative selection:bg-[#FFD700] selection:text-black"
     >
       {/* Cinematic Gradient Backdrop */}
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_80%_60%,rgba(255,215,0,0.06)_0%,rgba(0,0,0,0)_60%)]" />
 
       <div className="w-full max-w-6xl mx-auto z-10">
         {/* Section Heading */}
-        <div className="mb-10 md:mb-14 select-none">
+        <div className="mb-8 sm:mb-10 md:mb-14 select-none">
           <p className="text-xs font-bold tracking-[0.2em] uppercase text-zinc-400 mb-3 flex items-center gap-2">
             <span className="h-[2px] w-8 bg-zinc-300" />
             SELECTED ARTIFACTS
@@ -100,14 +100,14 @@ export default function Projects() {
         </div>
 
         {/* Project Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-10 w-full">
           {projects.map((project, idx) => (
             <div
               key={idx}
               ref={el => cardsRef.current[idx] = el}
               onMouseMove={(e) => handleMouseMove(e, idx)}
               onMouseLeave={() => handleMouseLeave(idx)}
-              className="relative p-8 rounded-3xl bg-zinc-100/80 border border-zinc-200 shadow-sm flex flex-col justify-between h-auto overflow-hidden group cursor-pointer transition-all duration-500 hover:border-[#FFD700]/50 hover:shadow-xl hover:bg-zinc-100"
+              className="relative p-5 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl bg-zinc-100/80 border border-zinc-200 shadow-sm flex flex-col justify-between h-auto overflow-hidden group cursor-pointer transition-all duration-500 hover:border-[#FFD700]/50 hover:shadow-xl hover:bg-zinc-100"
               style={{
                 '--mouse-x': '50%',
                 '--mouse-y': '50%',
@@ -123,7 +123,7 @@ export default function Projects() {
 
               {/* Card Top Information */}
               <div>
-                <div className="flex justify-between items-center mb-6">
+                <div className="flex justify-between items-center mb-4 sm:mb-6">
                   <div className="p-3 bg-zinc-200 border border-zinc-300 rounded-2xl transition-transform duration-500 group-hover:scale-110">
                     {project.icon}
                   </div>
@@ -152,7 +152,7 @@ export default function Projects() {
                   ))}
                 </div>
 
-                <a href={project.url} target="_blank" rel="noreferrer" className="flex items-center text-xs font-bold tracking-[0.15em] uppercase text-zinc-900 hover:text-black transition-colors group-hover:underline">
+                <a href={project.url} target="_blank" rel="noreferrer" className="inline-flex items-center min-h-[44px] py-2 text-xs font-bold tracking-[0.15em] uppercase text-zinc-900 hover:text-black transition-colors group-hover:underline">
                   <span className="mr-2">{project.linkText}</span>
                   <ExternalLink className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </a>

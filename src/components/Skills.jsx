@@ -69,7 +69,7 @@ export default function Skills() {
   return (
     <section 
       id="skills-section" 
-      className="scroll-section w-full min-h-screen px-6 md:px-16 py-24 md:py-32 flex flex-col justify-center items-center bg-[#fdfdfc] overflow-hidden selection:bg-[#FFD700] selection:text-black"
+      className="scroll-section w-full min-h-screen px-4 sm:px-6 md:px-16 py-16 sm:py-24 md:py-32 flex flex-col justify-center items-center bg-[#fdfdfc] overflow-x-hidden overflow-y-visible selection:bg-[#FFD700] selection:text-black"
     >
       <style>{`
         @keyframes marquee-left {
@@ -85,7 +85,7 @@ export default function Skills() {
         }
       `}</style>
 
-      <div className="w-full max-w-6xl mx-auto mb-12 md:mb-16">
+      <div className="w-full max-w-6xl mx-auto mb-8 sm:mb-12 md:mb-16">
         <p className="text-xs font-bold tracking-[0.2em] uppercase text-zinc-400 mb-3 flex items-center gap-2">
           <span className="h-[2px] w-8 bg-zinc-300" />
           SKILLS & TECH STACK
@@ -96,7 +96,7 @@ export default function Skills() {
       </div>
 
       <div 
-        className="w-[100vw] flex flex-col gap-6 md:gap-8 relative left-1/2 -translate-x-1/2"
+        className="w-full flex flex-col gap-4 sm:gap-6 md:gap-8 relative overflow-hidden"
         style={{
           maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
           WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)'

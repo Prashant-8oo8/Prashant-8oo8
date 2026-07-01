@@ -73,26 +73,26 @@ export default function Hero({ scrollToSection }) {
     <section
       id="hero-section"
       ref={containerRef}
-      className="scroll-section relative w-full h-screen bg-[#fdfdfc] text-zinc-900 overflow-hidden selection:bg-[#FFD700] selection:text-black"
+      className="scroll-section relative w-full min-h-screen h-screen bg-[#fdfdfc] text-zinc-900 overflow-hidden selection:bg-[#FFD700] selection:text-black"
     >
       {/* 1. Top Left Label (z-30 to stay above everything) */}
-      <div className="absolute top-12 left-6 md:top-16 md:left-16 z-30 fade-up-element">
-        <p className="text-xs md:text-sm font-bold tracking-[0.2em] text-zinc-400 uppercase flex items-center gap-3">
-          <span className="w-8 h-[2px] bg-zinc-300"></span>
+      <div className="absolute top-16 sm:top-14 md:top-16 left-4 sm:left-6 md:left-16 z-30 fade-up-element">
+        <p className="text-[10px] sm:text-xs md:text-sm font-bold tracking-[0.2em] text-zinc-400 uppercase flex items-center gap-2 sm:gap-3">
+          <span className="w-6 sm:w-8 h-[2px] bg-zinc-300"></span>
           Portfolio Archive // 2026
         </p>
       </div>
 
       {/* 2. LAYER 1 (BEHIND IMAGE): First Name (z-0) */}
       {/* Adjusted top position to push it higher up */}
-      <div className="absolute top-[25%] md:top-[22%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center z-0 pointer-events-none px-4 zoom-element">
-        <h1 className="text-[15vw] md:text-[10vw] lg:text-[11rem] font-black leading-[0.8] tracking-tighter uppercase whitespace-nowrap text-zinc-900">
+      <div className="absolute top-[22%] sm:top-[24%] md:top-[22%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center z-0 pointer-events-none px-2 sm:px-4 zoom-element">
+        <h1 className="text-[12vw] sm:text-[13vw] md:text-[10vw] lg:text-[11rem] font-black leading-[0.8] tracking-tighter uppercase whitespace-nowrap text-zinc-900">
           I'M PRASHANT
         </h1>
       </div>
 
-      <div className="absolute top-2/5 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 flex justify-center items-center pointer-events-none mt-4 md:mt-0 zoom-element">
-        <div className="relative w-64 h-[380px] md:w-[350px] md:h-[500px] rounded-[150px] overflow-hidden group bg-transparent pointer-events-auto">
+      <div className="absolute top-[38%] sm:top-2/5 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 flex justify-center items-center pointer-events-none mt-2 sm:mt-4 md:mt-0 zoom-element">
+        <div className="relative w-48 h-[280px] sm:w-64 sm:h-[380px] md:w-[350px] md:h-[500px] rounded-[120px] sm:rounded-[150px] overflow-hidden group bg-transparent pointer-events-auto">
           <img
             src={prashantImg}
             alt="Prashant Mishra"
@@ -100,22 +100,22 @@ export default function Hero({ scrollToSection }) {
           />
         </div>
       </div>
-      <div className="absolute top-[68%] md:top-[68%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center z-20 pointer-events-none px-4 zoom-element">
-       <h1 className="text-[18vw] md:text-[14vw] lg:text-[11rem] font-bold italic leading-[0.8] tracking-tighter uppercase whitespace-nowrap text-transparent drop-shadow-2xl"
-        style={{ WebkitTextStroke: "4px #6d87a8ff"}}>
+      <div className="absolute top-[60%] sm:top-[65%] md:top-[68%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center z-20 pointer-events-none px-2 sm:px-4 zoom-element">
+       <h1 className="text-[14vw] sm:text-[16vw] md:text-[14vw] lg:text-[11rem] font-bold italic leading-[0.8] tracking-tighter uppercase whitespace-nowrap text-transparent drop-shadow-2xl"
+        style={{ WebkitTextStroke: "clamp(2px, 0.5vw, 4px) #6d87a8ff"}}>
           MISHRA<span className="text-[#FFD700]">.</span>
        </h1>
       </div>
-      <div className="absolute bottom-8 left-6 md:bottom-[12%] md:left-16 flex flex-col items-start max-w-[320px] md:max-w-md z-30">
+      <div className="absolute bottom-4 sm:bottom-8 left-4 sm:left-6 md:bottom-[12%] md:left-16 flex flex-col items-start max-w-[280px] sm:max-w-[320px] md:max-w-md z-30">
         
         {/* Typewriter text */}
-        <h2 className="text-sm md:text-xl font-mono font-medium text-zinc-800 mb-5 h-6 flex items-center gap-1 bg-white/90 backdrop-blur-sm px-3 py-2 rounded-md border border-zinc-200 shadow-sm fade-up-element">
+        <h2 className="text-xs sm:text-sm md:text-xl font-mono font-medium text-zinc-800 mb-3 sm:mb-5 h-5 sm:h-6 flex items-center gap-1 bg-white/90 backdrop-blur-sm px-2 sm:px-3 py-1.5 sm:py-2 rounded-md border border-zinc-200 shadow-sm fade-up-element">
           <span>{displayed}</span>
           <span className="inline-block w-[3px] h-[1em] bg-[#FFD700] animate-[blink_1s_step-end_infinite]" />
         </h2>
 
         {/* Description */}
-        <p className="text-sm md:text-base font-medium text-zinc-600 leading-relaxed mb-8 bg-white/60 backdrop-blur-md p-3 rounded-lg md:bg-transparent md:p-0 md:backdrop-blur-none fade-up-element">
+        <p className="text-xs sm:text-sm md:text-base font-medium text-zinc-600 leading-relaxed mb-4 sm:mb-6 md:mb-8 bg-white/60 backdrop-blur-md p-2 sm:p-3 rounded-lg md:bg-transparent md:p-0 md:backdrop-blur-none fade-up-element">
           I build production-ready full-stack products that ship fast, scale well, and solve real problems. Currently in my 4th year of CS — shipping AI-powered apps used by real users.
         </p>
 
@@ -125,7 +125,7 @@ export default function Hero({ scrollToSection }) {
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           onClick={() => scrollToSection(1)}
-          className="relative px-8 py-4 md:px-10 md:py-5 bg-zinc-900 text-white rounded-full text-[10px] md:text-xs font-bold uppercase tracking-[0.15em] hover:bg-[#FFD700] hover:text-black transition-colors duration-500 cursor-pointer shadow-xl fade-up-element"
+          className="relative px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 min-h-[44px] bg-zinc-900 text-white rounded-full text-[10px] sm:text-[11px] md:text-xs font-bold uppercase tracking-[0.15em] hover:bg-[#FFD700] hover:text-black transition-colors duration-500 cursor-pointer shadow-xl fade-up-element"
         >
           Explore My Work
         </button>

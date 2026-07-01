@@ -151,7 +151,7 @@ export default function App() {
 
   return (
     <div
-      className="w-full h-full relative transition-colors duration-1000 ease-out overflow-hidden"
+      className="w-full h-full relative transition-colors duration-1000 ease-out overflow-x-hidden overflow-y-hidden"
       style={{ backgroundColor: getBgColor() }}
     >
       {/* Cinematic Lighting Layers (Floating Glow Blooms) */}

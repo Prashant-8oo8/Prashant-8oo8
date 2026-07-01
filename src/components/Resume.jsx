@@ -39,12 +39,12 @@ export default function Resume() {
   return (
     <section 
       id="resume-section" 
-      className="scroll-section w-full min-h-screen px-6 md:px-16 py-24 md:py-32 flex flex-col justify-center items-start bg-[#fdfdfc] relative selection:bg-[#FFD700] selection:text-black"
+      className="scroll-section w-full min-h-screen px-4 sm:px-6 md:px-16 py-16 sm:py-24 md:py-32 flex flex-col justify-center items-start bg-[#fdfdfc] relative selection:bg-[#FFD700] selection:text-black"
     >
       {/* Background Lighting Vignette Accent */}
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_70%_50%,rgba(255,215,0,0.06)_0%,rgba(0,0,0,0)_60%)]" />
 
-      <div className="w-full max-w-6xl mx-auto z-10 flex flex-col gap-12 md:gap-16 h-auto">
+      <div className="w-full max-w-6xl mx-auto z-10 flex flex-col gap-8 sm:gap-12 md:gap-16 h-auto">
         {/* Top Header */}
         <div>
           <p className="text-xs font-bold tracking-[0.2em] uppercase text-zinc-400 mb-3 flex items-center gap-2">
@@ -60,11 +60,11 @@ export default function Resume() {
         </div>
 
         {/* Content Layout */}
-        <div className="w-full flex flex-col lg:flex-row gap-8 items-start">
+        <div className="w-full flex flex-col lg:flex-row gap-6 sm:gap-8 items-start">
           
           {/* PDF Viewer Card */}
-          <div className="w-full lg:w-2/3 p-6 md:p-8 rounded-3xl bg-zinc-100 border border-zinc-200 flex flex-col gap-4 relative group overflow-hidden shadow-xl">
-            <div className="w-full aspect-[1/1.4] sm:aspect-auto sm:h-[600px] rounded-2xl bg-zinc-200 border border-zinc-300 relative overflow-hidden flex items-center justify-center">
+          <div className="w-full lg:w-2/3 p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl bg-zinc-100 border border-zinc-200 flex flex-col gap-4 relative group overflow-hidden shadow-xl">
+            <div className="w-full aspect-[1/1.4] sm:aspect-[1/1.3] md:aspect-auto md:h-[600px] rounded-xl sm:rounded-2xl bg-zinc-200 border border-zinc-300 relative overflow-hidden flex items-center justify-center">
               {/* Fallback Message (hidden naturally when iframe renders over it) */}
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 text-center p-6 text-zinc-500 z-0">
                 <FileText className="w-10 h-10 text-zinc-400" />
@@ -83,7 +83,7 @@ export default function Resume() {
           </div>
 
           {/* Action Buttons Column */}
-          <div className="w-full lg:w-1/3 flex flex-col gap-8 pt-4">
+          <div className="w-full lg:w-1/3 flex flex-col gap-6 sm:gap-8 pt-2 sm:pt-4">
             <div className="mb-4 select-none">
               <h4 className="text-lg sm:text-xl font-black tracking-tighter uppercase text-zinc-900 mb-4">Download or View</h4>
               <p className="text-sm sm:text-base font-medium text-zinc-600 leading-relaxed mb-6">
@@ -91,7 +91,7 @@ export default function Resume() {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row lg:flex-col gap-5 w-full">
+            <div className="flex flex-col sm:flex-row lg:flex-col gap-3 sm:gap-5 w-full">
               {/* Download Button */}
               <a 
                 href={resumePdf} 
@@ -99,7 +99,7 @@ export default function Resume() {
                 ref={downloadBtnRef}
                 onMouseMove={(e) => handleMouseMove(e, downloadBtnRef)}
                 onMouseLeave={() => handleMouseLeave(downloadBtnRef)}
-                className="inline-flex justify-center items-center gap-3 px-8 py-4 bg-zinc-900 text-white rounded-full text-xs font-bold uppercase tracking-[0.15em] hover:bg-[#FFD700] hover:text-black transition-colors duration-500 shadow-xl cursor-pointer w-full"
+                className="inline-flex justify-center items-center gap-3 px-6 py-3 sm:px-8 sm:py-4 min-h-[44px] bg-zinc-900 text-white rounded-full text-xs font-bold uppercase tracking-[0.15em] hover:bg-[#FFD700] hover:text-black transition-colors duration-500 shadow-xl cursor-pointer w-full"
               >
                 <Download className="w-4 h-4" />
                 Download PDF
@@ -113,7 +113,7 @@ export default function Resume() {
                 ref={viewBtnRef}
                 onMouseMove={(e) => handleMouseMove(e, viewBtnRef)}
                 onMouseLeave={() => handleMouseLeave(viewBtnRef)}
-                className="inline-flex justify-center items-center gap-3 px-8 py-4 bg-transparent border-[2px] border-zinc-900 text-zinc-900 rounded-full text-xs font-bold uppercase tracking-[0.15em] hover:bg-[#FFD700] hover:text-black hover:border-transparent transition-all duration-500 shadow-xl cursor-pointer w-full"
+                className="inline-flex justify-center items-center gap-3 px-6 py-3 sm:px-8 sm:py-4 min-h-[44px] bg-transparent border-[2px] border-zinc-900 text-zinc-900 rounded-full text-xs font-bold uppercase tracking-[0.15em] hover:bg-[#FFD700] hover:text-black hover:border-transparent transition-all duration-500 shadow-xl cursor-pointer w-full"
               >
                 <ExternalLink className="w-4 h-4" />
                 View Fullscreen
